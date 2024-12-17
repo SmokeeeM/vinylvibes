@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/estilos.css' %}">
+    <title>Éxito!</title>
+
+    <style>
+        .informacion{
+            font-size: 20px;
+            text-align: center;
+
+        }
+        button, a{
+            background-color: var(--colorsecundario);
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="bienvenida">    
+    <h1>¡Pago Exitoso!</h1>
+    <h3>Gracias por tu compra.</h3>
+</div>
+
+<div class="informacion">
+<p>Te llegará un correo electrónico con todos los detalles de tu compra.<br>Recuerda que si pediste entrega a domicilio hay un tiempo máximo de 2 semanas para que llegue tu pedido!.<br>Si tienes alguna duda contáctanos a la casilla contactovinylvibes@gmail.com o utiliza el formulario de contacto y nos comunicaremos contigo!</p>
+</div>
+
+
+<div class="detalle">
+    <p>Detalles del pago:</p>
+    <ul>
+        <li>Monto: {{ response.amount }}</li>
+        <li>Número de orden: {{ response.buy_order }}</li>
+        <li>Estado del pago: {{ response.status }}</li>
+    </ul>
+</div>
+<button><a href="{% url 'index' %}">Volver a la página</a></button>
+
+
+</body>
+</html>

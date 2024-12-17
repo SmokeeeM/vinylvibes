@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/estilos.css' %}">
+    <title>Vinyl Vibes</title>
+    
+</head>
+<body>
+    {% include 'navegacion.html' %}
+    {% block content %}
+    <div class="bienvenida">
+        <h1>Vinyl Vibes</h1>
+        <h3>¡Bienvenido a nuestro catálogo de productos!</h3>
+        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos delectus veritatis, vero consectetur maiores rem maxime ipsum distinctio cum excepturi quasi eaque, esse minima, omnis exercitationem eligendi assumenda sed dolorem!</h4>
+    </div>
+    
+<!-- INVESTIGAR FUNCIONAMIENTO DE ESTA LOGICA, CAMBIAR LA QUERY Y EL FILTRADO -->
+    <div class="busqueda">
+    <form method="get" action=""" class="barra_busqueda">
+        <input type="text" name="q" value="{{ query }}" placeholder="Buscar vinilos..." />
+    </form>
+    </div>
+
+
+    <main>
+        <div class="contenedor_principal">
+            {% for producto in productos %}
+            <div class="productos">
+                <img src="{{ producto.imagen.url }}">
+                <h2>{{ producto.nombre }}</h2>
+                <p>${{ producto.precio }}c/u</p>
+                <button><a href="{% url 'detalle' producto.id %}">Ver más</a></button>
+            </div>
+            {% empty %}
+            <p>No se encontraron productos :/ </p>
+            {% endfor %}
+        </div>
+    </main>
+    {% endblock %}
+    {% include 'footer.html' %}
+
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/estilos.css' %}">
+    <title>Checkout</title>
+</head>
+
+<body>
+{% include 'navegacion.html' %}
+{% block content %}
+
+<div class="bienvenida">
+    <h1>Antes de Continuar, ingresa tus datos!</h2>
+    <h3>Asegúrate de que hayas ingresado correctamente todo, esto servirá para no tener problemas en la entrega
+        de los pedidos
+    </h3>
+</div>
+
+<main class="main">
+<form method="POST" class="formulario">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <h3>Resumen de tu compra: </h3>
+    <ul>
+        {% for key, item in carrito.items %}
+        <li>{{ item.nombre }} - {{ item.cantidad }} x ${{ item.precio }}</li>
+        {% endfor %}
+    </ul>
+    <p id="totaal">Total: ${{ total|floatformat:3 }}</p>
+    <button type="submit"">Continuar con la Compra</button>
+</form>
+</main>
+{% endblock %}
+{% include 'footer.html' %}
+
+
+</body>
+</html>

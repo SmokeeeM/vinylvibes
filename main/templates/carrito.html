@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/estilos.css' %}">
+
+    <title>Carrito de Compras</title>
+
+</head>
+<body>
+    
+{% include 'navegacion.html' %}
+{% block content %}
+
+<div class="bienvenida">
+    <h1>Estás Comprando...</h1>
+</div>
+ 
+
+    <!-- Sección de productos -->
+    <div class="contenedor_carrito">
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto_id, item in carrito.items %}
+                <tr data-producto-id="{{ producto_id }}">
+                    <td><img src="{{ item.imagen }}" width="100" height="100"></td>
+                    <td>{{ item.nombre }}</td>
+                    <td>${{ item.precio }}</td>
+                    <td>{{ item.cantidad }}</td>
+                    <td><button><a href="{% url 'eliminar_producto' producto_id %}">Eliminar Producto</a></button></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    <div class="calculo">
+        <h3 colspan="3">Total:</h3>
+        <h3 id="total">${{ total|floatformat:3 }}</h3>
+    </div>
+    <div class="terminar">
+            <button><a href="{% url 'checkout' %}">Continuar con la Compra</a></button>
+        <form method="POST">
+            <button><a href="{% url 'vaciar_carrito' %}">Vaciar Carrito</a></button>
+        </form>
+    </div>
+
+</div>
+   
+
+{% endblock %}
+{% include 'footer.html' %}
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+[
+    {
+        "model": "main.producto",
+        "pk": 1,
+        "fields": {
+            "nombre": "Vinilo CURRENTS",
+            "descripcion": "Vinilo de edición especial de Tame Impala.",
+            "precio": "25000.000",
+            "imagen": "productos/R-7405556-1547061317-2933-1-800x800.jpg",
+            "stock": 5,
+            "artista": "Tame Impala"
+        }
+    },
+    {
+        "model": "main.producto",
+        "pk": 2,
+        "fields": {
+            "nombre": "Vinilo Moon Music",
+            "descripcion": "Último álbum de Coldplay en vinilo.",
+            "precio": "30000.000",
+            "imagen": "productos/X_imagen-album-coldplay5231.jpg",
+            "stock": 3,
+            "artista": "Coldplay"
+        }
+    },
+    {
+        "model": "main.producto",
+        "pk": 3,
+        "fields": {
+            "nombre": "Vinilo clancy 1lp",
+            "descripcion": "Vinilo clásico de Clancy.",
+            "precio": "25000.000",
+            "imagen": "productos/X_clancy0025.jpg",
+            "stock": 5,
+            "artista": "Clancy"
+        }
+    },
+    {
+        "model": "main.producto",
+        "pk": 4,
+        "fields": {
+            "nombre": "Vinilo meteora 2lp",
+            "descripcion": "Vinilo doble de Meteora.",
+            "precio": "20000.000",
+            "imagen": "productos/X_r-10091623-1518301575-32298386.jpg",
+            "stock": 4,
+            "artista": "Linkin Park"
+        }
+    },
+    {
+        "model": "main.producto",
+        "pk": 5,
+        "fields": {
+            "nombre": "Vinilo Homerun",
+            "descripcion": "Vinilo especial de Homerun.",
+            "precio": "20000.000",
+            "imagen": "productos/X_londra7626.jpg",
+            "stock": 0,
+            "artista": "Londra"
+        }
+    },
+    {
+        "model": "main.producto",
+        "pk": 6,
+        "fields": {
+            "nombre": "Vinilo dookie",
+            "descripcion": "Vinilo clásico de Green Day.",
+            "precio": "15000.000",
+            "imagen": "productos/X_0936249869590144.jpg",
+            "stock": 7,
+            "artista": "Green Day"
+        }
+    }
+]

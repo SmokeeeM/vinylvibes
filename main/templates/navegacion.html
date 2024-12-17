@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '../static/estilos_formato.css' %}">
+
+    <title>Document</title>
+</head>
+<body>
+
+
+    <style>
+        @keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+    </style>
+
+<div class="navegacion">
+       <nav class="barra">
+        <div>
+            <img class="logo" src="../media/disco-de-vinilo.png" style=" width: 80px; animation: girar 5s linear infinite;">
+        </div>
+        <ul>
+            <a href="{% url 'index' %}"><li>Inicio</li></a>
+            <a href="{% url 'ver_carrito' %}"><li>Mi Carrito</li></a>
+            <a href="#"><li>Sobre Nosotros</li></a>
+            <a href="#"><li>Contacto</li></a>
+        </ul>
+    </nav>
+</div>
+
+</body>
+</html>

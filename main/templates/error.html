@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error!</title>
+    <style>
+        :root{
+            --colorprincipal: #e5e5e5;
+            --colorsecundario: #fca311;
+            --colorterciario: #14213d;
+        }
+        body{
+            background-color: var(--colorprincipal);
+            font-family: sans-serif;
+        }
+
+         div p{
+            font-size: 20px;
+        }
+        div{
+            margin: auto;
+            text-align: center;
+            font-size: 28px;
+        }
+        button, a{
+            background-color: var(--colorsecundario);
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+<body>
+
+<div>    
+<h2>¡Algo salió mal!</h2>
+<h4>{{ mensaje }}</h4>
+<P>¿Quieres volver a intentarlo? Prueba a cambiar tu tarjeta o comprobar tu conexión</P>
+</div>
+<button><a href="{% url 'index' %}">Volver a la página</a></button>
+    
+</body>
+</html>
+
